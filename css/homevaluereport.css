@@ -1,0 +1,15 @@
+/* Home Values Redesign */
+.rn-home-values-card-top {background: #292929}
+
+#rn-home-values-share-button, 
+#rn-home-values-save-button, 
+.rn-home-values-share-submit,
+.rn-home-values-form-submit {
+  background: #292929;
+  color: #ffffff;
+}
+
+#rn-home-values-share-button:hover, 
+#rn-home-values-save-button:hover, 
+.rn-home-values-share-submit:hover,
+.rn-home-values-form-submit:hover {background: #C9001F}

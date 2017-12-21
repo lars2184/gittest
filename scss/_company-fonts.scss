@@ -1,0 +1,18 @@
+
+// FONTS
+// ------------------------------------------------------------------------------------------
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,800italic,700italic,700,600italic,600,400italic,300italic,800|Open+Sans+Condensed:300,300italic,700);
+
+$font-light: 100;
+$sans-serif-font: 'Open Sans', Helvetica Neue, Helvetica, Arial, sans-serif;
+$serif-font: Georgia, Times, Times New Roman, serif;
+
+// HTML RESETS
+// ------------------------------------------------------------------------------------------
+
+html,
+body {
+  font-family: $sans-serif-font;
+  font-size: $base-font-size;
+}

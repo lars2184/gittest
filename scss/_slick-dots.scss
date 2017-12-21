@@ -1,0 +1,51 @@
+// SLICK SLIDER DOTS
+// ------------------------------------------------------------------------------------------
+.rn-slick-slider {
+
+
+  ul.slick-dots {
+
+    list-style: none;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: rem-calc(20);
+    top: 100%;
+    display: flex;
+
+    li.slick-active {
+
+      button{
+
+        background-color: $primary-color;
+      }
+
+    }
+
+    li{
+
+      margin: rem-calc(3);
+
+      button{
+
+        text-indent: -9999px;
+        width: rem-calc(8);
+        height: rem-calc(16);
+        border-radius: rem-calc(8);
+        background-color: rgba(255,255,255,0.2);
+        border: 2px solid $primary-color;
+      }
+    }
+  }
+}
+
+// SLICK SLIDER DOTS - POSITION
+// ------------------------------------------------------------------------------------------
+.rn-slick-slider {
+
+  ul.slick-dots {
+
+    top: 100%;
+    right: 0px;
+  }
+}

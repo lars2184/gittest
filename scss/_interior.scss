@@ -1,0 +1,300 @@
+
+
+// INTERIOR
+// ------------------------------------------------------------------------------------------
+
+
+// AGENT OFFICE
+// ------------------------------------------------------------------------------------------
+.rn-site-agent-office {
+
+	background-color: $white;
+	padding: rem-calc(20);
+}
+
+
+// HOME AND INTERIOR
+// ------------------------------------------------------------------------------------------
+.rn-home, .rn-site-content {
+
+}
+
+// INTERIOR
+// ------------------------------------------------------------------------------------------
+.rn-site-content {
+
+	padding: rem-calc(40 10);
+
+	img {
+
+		max-width: 100%;
+		height: auto;
+	}
+
+	h1 {
+
+		font-family: $sans-serif-font;
+		font-size: rem-calc(30);
+		text-transform: uppercase;
+		color: $secondary-color;
+		font-weight: bold;
+
+		@media #{$mobile-down} {
+
+			font-size: rem-calc(24);
+		}
+	}
+
+	h2 {
+
+		font-family: $sans-serif-font;
+		font-size: rem-calc(24);
+		text-transform: uppercase;
+		color: $black;
+		font-weight: 600;
+
+		@media #{$mobile-down} {
+
+			font-size: rem-calc(21);
+		}
+	}
+
+	h3 {
+
+		font-family: $sans-serif-font;
+		font-size: rem-calc(18);
+		text-transform: uppercase;
+		color: $black;
+		font-weight: 400;
+
+		@media #{$mobile-down} {
+
+			font-size: rem-calc(16);
+		}
+	}
+
+	h4 {
+
+		font-family: $sans-serif-font;
+		font-size: rem-calc(16);
+		color: $black;
+		font-weight: bold;
+
+		@media #{$mobile-down} {
+
+			font-size: rem-calc(14);
+		}
+	}
+
+	h5 {
+
+		font-family: $sans-serif-font;
+		font-size: rem-calc(16);
+		color: $black;
+		font-weight: 600;
+
+		@media #{$mobile-down} {
+
+			font-size: rem-calc(14);
+		}
+	}
+
+	h6 {
+
+		font-family: $sans-serif-font;
+		font-size: rem-calc(16);
+		color: $black;
+		font-weight: 400;
+
+		@media #{$mobile-down} {
+
+			font-size: rem-calc(14);
+		}
+	}
+
+	p {
+
+		font-family: $sans-serif-font;
+		font-size: rem-calc(16);
+		color: $black;
+		font-weight: 100;
+		line-height: 1.5;
+
+		@media #{$mobile-down} {
+
+			font-size: rem-calc(14);
+		}
+	}
+
+	ul, ol {
+
+		li {
+
+			font-family: $sans-serif-font;
+			font-size: rem-calc(16);
+			color: $black;
+			font-weight: 600;
+
+			@media #{$mobile-down} {
+
+				font-size: rem-calc(14);
+			}
+		}
+	}
+
+	blockquote {
+
+		font-family: $sans-serif-font;
+		font-size: rem-calc(16);
+		font-style: italic;
+		color: $primary-color;
+		font-weight: 100;
+		line-height: 1.5;
+
+		@media #{$mobile-down} {
+
+			font-size: rem-calc(14);
+		}
+	}
+}
+
+
+// DASHBOARD
+// ---------------------------------------------------------------------------------------------------------
+// Fixes 'Search for Matching Address' and 'Search Proximity to Address' areas from stacking 
+// On page ?p=findahome.asp&selected=mlsaddress
+.rn-mls-address-search .rn-address-search {
+
+  width: 49%;
+}
+
+// Fixes background of main buttons on dashboard
+.rn-dashboard-navigation a {
+  
+  background: $primary-color;
+}
+
+// Fixes 'create profile' button from being cut off on iphone 5 on property watch login
+.rn-dashboard-login-forms form .rn-dashboard-form-button {
+  
+  @media #{$small-only} {
+   width: 100% !important;
+  }
+}
+
+// Fixes 'remember me' radio buttons on property watch login from being crowded on iphone5
+.rn-dashboard-login-forms .rn-dashboard-return-login-radio {
+  
+  @media #{$small-only} {
+   width: 100% !important;
+  }
+}
+
+// Fixes market watch set your location input field
+input.rn-search-EntryAndResultNumber-form-entry {
+  padding: rem-calc(1);
+}
+
+// Fixes market watch set your location submit button
+input.rn-search-EntryAndResultNumber-form-submit {
+
+  box-sizing: border-box;
+}
+
+// HOME VALUES REPORT
+// ---------------------------------------------------------------------------------------------------------
+.rn-home-values-form-submit {
+
+  width: auto !important;
+}
+
+a[href*='removeFormOverlay']{
+
+  right: 80% !important;
+}
+
+/* Home Values Redesign */
+.rn-home-values-card-top {background: $secondary-color !important}
+
+#rn-home-values-share-button, 
+#rn-home-values-save-button, 
+.rn-home-values-share-submit,
+.rn-home-values-form-submit {
+  background: $primary-color !important;
+  color: #ffffff;
+}
+
+#rn-home-values-share-button:hover, 
+#rn-home-values-save-button:hover, 
+.rn-home-values-share-submit:hover,
+.rn-home-values-form-submit:hover {background: $secondary-color !important}
+
+
+// AGENT OFFICE
+// ---------------------------------------------------------------------------------------------------------
+.rn-site-agent-office{
+
+  padding-top: rem-calc(20);
+}
+.rn-roster-search-submit{
+
+    background-color: $primary-color !important;
+}
+
+.rn-roster-search-submit:hover{
+
+    background-color: $secondary-color !important;
+}
+
+.rn-office-name a {
+    color: $secondary-color !important;
+}
+
+.rn-agent-roster .rn-agent-card .rn-agent-buttons .rn-agent-button-questions a{
+
+    background-color: $secondary-color !important;
+}
+
+.rn-agent-roster .rn-agent-card .rn-agent-buttons .rn-agent-button-questions a:hover{
+
+    background-color: $primary-color !important;
+}
+
+.rn-agent-roster .rn-agent-card .rn-agent-info .rn-agent-contact .rn-agent-name{
+
+    color: $secondary-color !important;
+}
+
+.rn-agent-contact-office-directions{
+
+    color: $secondary-color !important;
+}
+
+// DASHBOARD
+// ----
+.rn-dashboard-login, .rn-dashboard-intro{
+
+  h2{
+
+    color: $secondary-color !important;
+  }
+
+  .rn-dashboard-form-button{
+
+    background-color: $primary-color;
+
+    &:focus,
+    &:hover{
+
+      background-color: $secondary-color;
+    }
+  }
+
+}
+
+
+// Contact form buttons
+.rn-popup-contact-buttons-row .rn-popup-contact-button{
+
+  background-color: $primary-color !important;
+}

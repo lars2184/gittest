@@ -1,0 +1,93 @@
+
+// SLICK SLIDER ARROWS
+// ------------------------------------------------------------------------------------------
+.rn-slick-slider {
+
+  .slick-prev,
+  .slick-next {
+
+      position: absolute;
+      font-size: 0;
+      line-height: 0;
+      top: 32%;
+      display: block;
+      width: 40px;
+      height: 40px;
+      padding: 0;
+      margin-top: -10px\9; /*lte IE 8*/
+      -webkit-transform: translate(0, -50%);
+      -ms-transform: translate(0, -50%);
+      transform: translate(0, -50%);
+      cursor: pointer;
+      color: transparent;
+      border: none;
+      outline: none;
+      background: transparent;
+      font-size: 3rem;
+      background-color: rgba(0,0,0,0.7); // background color
+      //border-radius: rem-calc(20); // makes background a circle
+      border: 1px solid $white;
+      overflow: hidden;
+      z-index: 1;
+
+      &:focus, &:hover{
+
+        opacity: 0.7;
+      }
+  }
+
+  .slick-prev:before, .slick-next:before { 
+
+      position: absolute;
+      top: rem-calc(2);
+      font-size: rem-calc(30);
+      font-family: FontAwesome; 
+      line-height: 1; 
+      color: $white; // color of arrows
+      opacity: 1; 
+      -webkit-font-smoothing: antialiased; 
+      -moz-osx-font-smoothing: grayscale; 
+      display: inline-block;
+      width: rem-calc(40);
+      height: rem-calc(40);
+      margin-left: rem-calc(0);
+      font-weight: 100;
+      background-size: cover;
+      background-repeat: no-repeat;
+
+      &:focus,
+      &:hover {
+
+        //color: $white;
+      }
+  }   
+
+  .slick-prev:before { 
+    content: '\f104';
+    //background-image: url(../img/arrow-left-blue.png);
+    left: rem-calc(-2);
+  }
+
+  .slick-next:before { 
+    content: '\f105';
+    //background-image: url(../img/arrow-right-blue.png);
+  }
+
+}
+
+// SLICK SLIDER ARROWS - POSITION
+// ------------------------------------------------------------------------------------------
+#rnSlickSlider{
+
+  .slick-prev{
+
+    left: 10% !important; 
+    top: 50% !important; 
+  }
+
+  .slick-next{
+
+    right: 10% !important; 
+    top: 50% !important;
+  }
+}

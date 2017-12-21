@@ -1,0 +1,189 @@
+
+// CONTACT MODAL
+// ------------------------------------------------------------------------------------------
+
+
+// MODAL MASK
+// ------------------------------------------------------------------------------------------
+.rn-contact-modal-mask {
+  background: $black;
+  opacity: .65;
+  
+  height: 100vh;
+  width: 100vw;
+  
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 9998;
+}
+
+
+// MODAL CONTAINER
+// ------------------------------------------------------------------------------------------
+.rn-contact-modal {
+  background-color: $white;
+  border: 1px solid $gray;
+  box-shadow: 0 0 8px rgba($black, .4);
+  
+  height: auto;
+  margin-left: -40%;
+  width: 80%;
+  
+  position: fixed;
+  top: 5vh;
+  left: 50%;
+  z-index: 9999;
+  
+  display: flex;
+
+  @media #{$mobile-down}{
+
+    overflow-y: auto;
+    height: 90vh;
+  }
+  
+  @media #{$small-only} {
+    flex-wrap: wrap;
+
+    margin-left: -48%;
+    width: 96%;
+  }
+}
+
+
+// MODAL SECTIONS
+// ------------------------------------------------------------------------------------------
+.rn-contact-modal-form-section {
+  padding: ($gutter-width / 2);
+  
+  flex: 1 1 auto;
+  
+  input {
+    height: rem-calc(40);
+  }
+  
+  select {
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    height: rem-calc(40);
+    background-color: white;
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMTJweCIgeT0iMHB4IiB3aWR0aD0iMjRweCIgaGVpZ2h0PSIzcHgiIHZpZXdCb3g9IjAgMCA2IDMiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDYgMyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHBvbHlnb24gcG9pbnRzPSI1Ljk5MiwwIDIuOTkyLDMgLTAuMDA4LDAgIi8+PC9zdmc+");
+    background-position: 100% center;
+    background-repeat: no-repeat;
+  }
+  
+  textarea {
+    height: rem-calc(120);
+  }
+  
+  input, textarea, select {
+    width: 100%;
+    margin-bottom: ($gutter-width / 2);
+    padding: ($gutter-width / 4) ($gutter-width / 2);
+  }
+}
+
+.rn-contact-modal-info-section {
+  background: darken($white, 8%);
+  border: 1px solid $gray-light;
+  
+  padding: ($gutter-width / 2) $gutter-width ($gutter-width / 2) ($gutter-width / 2);
+  
+  flex: 0 0 33.3333%;
+  
+  @media #{$small-only} {
+    padding: ($gutter-width / 2);
+    
+    flex-basis: 100%;
+  }
+  
+  p {
+    font-size: rem-calc(14);
+    
+    padding-left: ($gutter-width / 2);
+
+    @media #{$small-only} {
+      font-size: rem-calc(10);
+    }
+  }
+}
+
+.rn-contact-modal-close {
+  color: $black;
+  cursor: pointer;
+  
+  position: absolute;
+  top: ($gutter-width / 4);
+  right: ($gutter-width / 4);
+}
+
+
+// CONTACT FORM
+// ------------------------------------------------------------------------------------------
+.rn-contact-form-row {
+  margin: 0 -($gutter-width / 2);
+  display: flex;
+}
+
+.rn-contact-form-from,
+.rn-contact-form-subject,
+.rn-contact-form-message,
+.rn-contact-form-buttons {
+  padding: ($gutter-width / 2);
+  width: 100%;
+}
+
+.rn-contact-form-first-name,
+.rn-contact-form-last-name,
+.rn-contact-form-phone,
+.rn-contact-form-contact-method {
+  padding: ($gutter-width / 2);
+  width: 50%;
+}
+
+.rn-contact-form-buttons {
+  display: flex;
+  justify-content: center;
+  
+  button {
+    border: none;
+    border-radius: 2px;
+    color: $white;
+    
+    margin: 0 ($gutter-width / 2);
+    padding: rem-calc(6 16 8);
+    
+    &.rn-contact-form-button-submit {
+      background: $black;
+    }
+    
+    &.rn-contact-form-button-reset {
+      background: $gray;
+    }
+    
+    &.rn-contact-form-button-cancel {
+      background: $black;
+    }
+
+    @media #{$small-only} {
+
+      padding: rem-calc(6 5 8);
+    }
+  }
+}
+
+.rn-contact-form-required {
+  color: $black;
+  font-style: italic;
+  font-size: rem-calc(14);
+}
+
+.rn-contact-form-disclaimer {
+  font-size: rem-calc(11);
+  line-height: 1.4;
+  text-align: center;
+}

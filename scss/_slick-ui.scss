@@ -1,0 +1,207 @@
+
+// ------------------------------------------------------------------------------------------
+// SLICK ARROWS AND DOTS
+// ------------------------------------------------------------------------------------------
+
+// SLICK SLIDER ARROWS
+// ------------------------------------------------------------------------------------------
+.rn-slick-slider {
+
+  .slick-prev,
+  .slick-next {
+
+      position: absolute;
+      font-size: 0;
+      line-height: 0;
+      top: 32%;
+      display: block;
+      width: 40px;
+      height: 40px;
+      padding: 0;
+      margin-top: -10px\9; /*lte IE 8*/
+      // -webkit-transform: translate(0, -50%);
+      // -ms-transform: translate(0, -50%);
+      // transform: translate(0, -50%);
+      cursor: pointer;
+      color: transparent;
+      border: none;
+      outline: none;
+      background: transparent;
+      font-size: 3rem;
+      background-color: rgba(0,0,0,0.0); // background color
+      //border-radius: rem-calc(20); // makes background a circle
+      //border: 1px solid $white;
+      overflow: hidden;
+      z-index: 1;
+
+      &:focus, &:hover{
+
+        opacity: 0.7;
+      }
+  }
+
+  .slick-prev:before, .slick-next:before { 
+
+      position: absolute;
+      top: rem-calc(2);
+      font-size: rem-calc(30);
+      font-family: FontAwesome; 
+      line-height: 1; 
+      color: $white; // color of arrows
+      opacity: 1; 
+      -webkit-font-smoothing: antialiased; 
+      -moz-osx-font-smoothing: grayscale; 
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      margin-left: rem-calc(0);
+      font-weight: 100;
+      background-size: cover;
+      background-repeat: no-repeat;
+
+      &:focus,
+      &:hover {
+
+        //color: $white;
+      }
+  } 
+
+  .slick-prev{
+    
+    text-align: left;
+  }
+
+  .slick-next{
+
+    text-align: right;
+  }  
+
+  .slick-prev:before { 
+    content: '\f104';
+    //background-image: url(../img/arrow-left-blue.png);
+    //left: rem-calc(-2);
+  }
+
+  .slick-next:before { 
+    content: '\f105';
+    //background-image: url(../img/arrow-right-blue.png);
+  }
+
+}
+
+// SLICK SLIDER ARROWS - POSITION
+// ------------------------------------------------------------------------------------------
+#rnSlickSlider{
+
+  .slick-prev{
+
+    left: 10% !important; 
+    top: 50% !important; 
+  }
+
+  .slick-next{
+
+    right: 10% !important; 
+    top: 50% !important;
+  }
+}
+
+
+
+
+// SLICK SLIDER DOTS
+// ------------------------------------------------------------------------------------------
+.rn-slick-slider {
+
+
+
+  ul.slick-dots {
+
+    list-style: none;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: rem-calc(0);
+    top: 100%;
+    display: flex;
+
+    
+    height: rem-calc(60);
+    -webkit-padding-start: 0;
+
+    right: 0px;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+
+    li.slick-active {
+
+      button{
+
+        .rn-dot{
+          background-color: $primary-color;
+        }
+      }
+
+    }
+
+    li{
+
+      
+      display: flex;
+      align-items: center;
+      margin: rem-calc(2);
+
+      button{
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-indent: -9999px;
+        background-color: rgba(255,255,255,0);
+        border: none;
+        border-radius: rem-calc(0);
+        padding: 0;
+        width: rem-calc(20);
+        height: rem-calc(20);
+
+        .rn-dot{
+
+          -webkit-transform: translate(0, -25%);
+          -ms-transform: translate(0, -25%);
+          transform: translate(0, -25%);
+
+          background-color: $secondary-color;
+          border: 1px solid $secondary-color;
+
+          // SIZE
+          width: rem-calc(8);
+          height: rem-calc(8);
+          border-radius: rem-calc(4);
+        }
+
+        &:focus,
+        &:hover {
+
+          .rn-dot{
+
+            background-color: $primary-color;
+            border: 1px solid $primary-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+// SLICK SLIDER DOTS - POSITION
+// ------------------------------------------------------------------------------------------
+.rn-slick-slider {
+
+  ul.slick-dots {
+
+    top: 100%;
+    right: 0px;
+  }
+}

@@ -1,0 +1,598 @@
+@import '../../modules/internet/search/search3skin/scss/sass-burger';
+
+
+// DESKTOP VARS
+// ---------------------------------------------------------------------------------------------------------
+
+// desktop nav colors
+$desktop-nav-text-color: $primary-color;
+$desktop-nav-text-color-roll: $black;
+$desktop-nav-dropdown-text-color: $primary-color;
+$desktop-nav-dropdown-text-color-roll: $white;
+$desktop-nav-dropdown-background-color: $white;
+$desktop-nav-dropdown-background-color-roll: $primary-color;
+
+$desktop-nav-vertical-padding-tablet: rem-calc(10);
+$desktop-nav-vertical-padding-large: rem-calc(15);
+$desktop-nav-vertical-padding-xlarge: rem-calc(15);
+
+$desktop-nav-horizontal-padding-tablet: rem-calc(5);
+$desktop-nav-horizontal-padding-large: rem-calc(15);
+$desktop-nav-horizontal-padding-xlarge: rem-calc(20);
+
+// desktop nav text sizes
+$desktop-nav-text-size-tablet: rem-calc(11);
+$desktop-nav-text-size-large: rem-calc(14);
+$desktop-nav-text-size-xlarge: rem-calc(14);
+
+$desktop-nav-dropdown-text-size: rem-calc(12);
+
+// desktop nav bottom padding
+$desktop-nav-bottom-padding: rem-calc(10);
+$desktop-nav-bottom-padding-tablet: rem-calc(10);
+
+// desktop nav dropdown position
+$desktop-nav-dropdown-top: 100%;
+$desktop-nav-dropdown-top-tablet: 100%;
+
+
+// MOBILE VARS
+// ---------------------------------------------------------------------------------------------------------
+
+// mobile nav colors
+$mobile-nav-text-color: $white;
+$mobile-nav-text-color-roll: $white;
+$mobile-nav-dropdown-text-color: $white;
+$mobile-nav-icon-color: $primary-color;
+$mobile-nav-top-background-color: $white;
+$mobile-nav-background-color: $primary-color; // just the top level nav items, doesn't include sub nav items
+$mobile-nav-background-color-roll: $black;
+$mobile-nav-dropdown-background-color: #999999;
+$mobile-nav-dropdown-background-color-roll: #333333;
+
+// mobile nav text/icon sizes
+$mobile-nav-text-size: rem-calc(13); // includes main and sub items
+$mobile-nav-icon-size: rem-calc(26); // doesn't include burger
+
+
+// GLOBAL NAV
+// ------------------------------------------------------------------------------------------
+
+// removes bullets on ie
+nav.rn-site-header-nav .rn-site-header-nav-menu .dropdown li {
+
+  list-style: none !important;
+  //list-style-image: url(data:0) !important;
+
+}
+
+nav.rn-site-header-nav {
+
+  .rn-site-header-nav-menu {
+
+    span {
+      @extend i;
+    }
+
+    div.rn-nav-home-text {
+
+      font-family: $sans-serif-font;
+    }
+  }
+}
+
+
+// ------------------------------------------------------------------------------------------
+
+// NAV TABLET ONLY
+@media only screen and (min-width: 48.0625em) and (max-width: 64em) {
+
+  nav.rn-site-header-nav {
+
+    ul.rn-site-header-nav-menu {
+
+      >li {
+
+        //padding: rem-calc(10 0);  // use with lines between nav items
+        //padding-bottom: $desktop-nav-bottom-padding-tablet;  // use with lines between nav items
+
+        &:before {
+
+          left: -3px;
+
+        }
+
+        >a {
+
+          font-size: $desktop-nav-text-size-tablet;
+          //padding: rem-calc(0 10);   // use with lines between nav items
+          padding: $desktop-nav-vertical-padding-tablet $desktop-nav-horizontal-padding-tablet !important;  // USED TABLET
+          
+        }
+      }
+    }
+  }
+}
+
+// ---------------------------------------------------------------------------------------------------------
+
+// NAV TABLET UP
+@media #{$tablet-up} {
+
+  .rn-logo-desktop{
+
+  }
+
+  .rn-logo-mobile {
+
+    display: none;
+  }
+
+  nav.rn-site-header-nav {
+
+    width: 100%;
+    z-index: 2;
+
+    >ul {
+
+        -webkit-margin-before: 0;
+        -webkit-margin-after: 0;
+        -webkit-margin-start: 0;
+        -webkit-margin-end: 0;
+        margin-top: rem-calc(5);
+        margin-right: rem-calc(10);
+
+      >li {
+
+        //border-left: 1px solid $white;
+        //padding: rem-calc(10 0 20);
+        //padding: rem-calc(10 0);   // use with lines between nav items
+        //padding-bottom: $desktop-nav-bottom-padding;   // use with lines between nav items
+        position: relative;
+        //border: 1px solid red;
+
+        &:before {
+
+          content: "";
+          width: 1px;
+          height: $desktop-nav-text-size-xlarge * 1.5;
+          background-color: $desktop-nav-text-color;
+          display: block;
+          position: absolute;
+          top: $desktop-nav-vertical-padding-xlarge;
+          left: 0;
+
+          @media only screen and (min-width: 48.0625em) and (max-width: 64em) {
+
+            top: $desktop-nav-vertical-padding-tablet;
+            height: $desktop-nav-text-size-tablet * 1.5;
+          }
+
+          @media #{$large-only} {
+
+            top: $desktop-nav-vertical-padding-large;
+            height: $desktop-nav-text-size-large * 1.5;
+          }
+
+        }
+
+        // hide first divider rule
+        &:first-child {
+
+          &:before{
+
+            display: none;
+          }
+        }
+
+        >a {
+
+          font-weight: 400;
+          letter-spacing: 0.05rem;
+          text-transform: uppercase;
+          font-size: $desktop-nav-text-size-xlarge;
+          //padding: rem-calc(0 20); // use with lines between nav items
+          padding: $desktop-nav-vertical-padding-xlarge $desktop-nav-horizontal-padding-xlarge;  // NOT USED
+
+          @media #{$large-only} {
+
+            font-size: $desktop-nav-text-size-large;
+            padding: $desktop-nav-vertical-padding-large $desktop-nav-horizontal-padding-large;
+          }
+
+
+        }
+
+        &:first-child {
+
+          >a {
+
+            border-left: none;
+          }
+        }
+      }
+    }
+
+    .rn-site-header-nav-menu {
+
+      display: flex !important; // important so when resizing from mobile it reverts back
+      overflow: visible !important; // important so when resizing from mobile it reverts back
+      justify-content: flex-end;
+      padding: 0;
+      list-style: none;
+      margin-bottom: 0;
+    
+      li {
+
+        &.has-dropdown {
+
+          position: relative;
+          
+          &:hover {
+            .dropdown {
+              
+              display: block; // Show dropdown menu when hovering over nav item
+            }
+          }
+        }
+      }
+    
+      a {
+
+        color: $desktop-nav-text-color;
+        text-decoration: none;
+        //padding: 0 ($gutter-width * .75); // use with lines between nav items
+        padding: $desktop-nav-vertical-padding-xlarge $desktop-nav-horizontal-padding-xlarge;  // USED - Greater than Large
+        display: block;
+        transition: $transition;
+        
+
+        @media #{$large-only} {
+      
+          //padding: 0 ($gutter-width * .6); // use with lines between nav items
+          padding: $desktop-nav-vertical-padding-large $desktop-nav-horizontal-padding-large; // USED - Large
+        }
+      }
+
+      >li {
+
+        &:first-child {
+
+          div.rn-nav-home-text { 
+
+            display: none; // hide home text on large view
+          }
+        }
+      }
+
+      li.rn-nav-logo {
+
+        flex: 1 0 auto;
+        width: 40%;
+      }
+    }
+  }
+}
+
+// ---------------------------------------------------------------------------------------------------------
+
+// NAV LARGE UP
+@media #{$tablet-up} {
+
+  nav.rn-site-header-nav {
+
+    .rn-site-header-nav-menu {
+
+      li {
+        
+        text-align: center;
+
+        &:first-child {
+
+          border: none;
+        }
+
+        &:hover {
+
+          > a {
+ 
+            color: $desktop-nav-text-color-roll;
+          }
+        }
+      }
+      
+      >li {
+
+        &:last-child {
+
+          .dropdown {
+
+            right: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+// NAV DROPDOWN
+// ------------------------------------------------------------------------------------------
+@media #{$tablet-up} {
+
+  nav.rn-site-header-nav {
+
+    .rn-site-header-nav-menu {
+
+      .dropdown {
+
+        padding: 0 0 0; // gutter-width padding on top to drop below header
+        width: rem-calc(220);
+        display: none; // Hide by default
+        position: absolute;
+        top: $desktop-nav-dropdown-top; // Nav height
+
+        @media only screen and (min-width: 48.0625em) and (max-width: 64em) {
+
+          top: $desktop-nav-dropdown-top-tablet; // Nav height
+        }
+
+        z-index: 10;
+        margin: 0;
+        list-style: none;
+
+        li {
+
+          border-top: 1px solid $gray-2;
+          border-left: none;
+
+          &:first-child {
+
+            border-top: none;
+          }
+          
+          a {
+            
+            border: none;
+            padding: ($gutter-width / 2) $gutter-width;
+            min-width: 100%;
+            display: inline-block;
+            font-size: $desktop-nav-dropdown-text-size;
+            color: $desktop-nav-dropdown-text-color; // Override red hover color
+            background: $desktop-nav-dropdown-background-color !important;
+            text-align: left;
+
+            &:focus,
+            &:hover {
+
+              color: $desktop-nav-dropdown-text-color-roll;
+              background: $desktop-nav-dropdown-background-color-roll !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+// MOBILE NAV
+// ------------------------------------------------------------------------------------------
+@media #{$mobile-down} {
+
+  header.rn-site-header {
+
+    height: rem-calc(40) !important;
+
+    >.rn-container {
+
+      padding: 0 !important;
+      height: rem-calc(40) !important;
+      flex-wrap: nowrap;
+      display: flex;
+      flex-direction: row;
+
+      nav.rn-site-header-nav {
+
+        max-height: 100%;
+      }
+    }
+  }
+
+  .rn-site-header >.rn-container .rn-site-header-property-watch {
+
+     display: none !important;
+  }
+
+  .rn-logo-desktop {
+
+    display: none;
+  }
+
+  .rn-logo-mobile {
+
+    
+  }
+
+  nav.rn-site-header-nav {
+
+      flex: 0 1 auto;
+      top: 0;
+      height: rem-calc(40);
+      font-size: $mobile-nav-text-size;
+      width: 100% !important;
+      z-index: 2;
+
+    .rn-site-header-nav-menu {
+
+      padding: 0;
+      list-style: none;
+      margin: 0;
+      width: 100%; // Fill the width of the screen
+      display: none; // Hide nav by default for smaller screens
+      position: absolute; // Nav should overlap content for mobile
+      top: rem-calc(40); // Nav should display below header
+      left: 0; // Append to left of screen
+      z-index: 10; // Display over page content
+
+      >li {
+
+        &:first-child {
+
+          .fa {
+
+            display: none; // hide home icon on mobile view
+          }
+        }
+      }
+
+      li {
+
+        border-top: 1px solid $white;
+        border-left: none; // Remove border styling
+
+        &:hover {
+
+          > a {
+            color: $mobile-nav-text-color-roll;
+          }
+        }
+      }
+
+      a {
+
+        color: $mobile-nav-text-color;
+        text-decoration: none;
+        padding: 0 ($gutter-width * .75);
+        display: block;
+        transition: $transition;
+        background: $mobile-nav-background-color;
+        line-height: 2; // Increase height for ease of clicking
+        text-align: center; // Center text
+        padding: $gutter-width / 2; // Increase padding for ease of clicking
+        width: 100%; // Fill entire li element
+        display: block; // Fill entire width
+        
+        &:hover {
+
+          background: $mobile-nav-background-color-roll;
+        }
+      }
+
+      a.rn-site-header-nav-button.rn-search-user-toggle {
+
+        margin-top: rem-calc(-17);
+      }
+    }
+  }
+}
+
+
+// MOBILE DROPDOWN
+// ------------------------------------------------------------------------------------------
+@media #{$mobile-down} {
+
+  nav.rn-site-header-nav {
+
+    .rn-site-header-nav-menu {
+
+      .dropdown {
+
+        padding: 0;
+        width: 100%;
+        display: none;
+        position: relative;
+        top: auto;
+
+        a {
+
+          background: $mobile-nav-dropdown-background-color !important; //2nd
+          color: $mobile-nav-dropdown-text-color;
+
+          &:hover {
+
+            background: $mobile-nav-dropdown-background-color-roll !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+// NAV BUTTONS
+// ------------------------------------------------------------------------------------------
+// burger, login, search
+@media #{$tablet-up} {
+
+  nav.rn-site-header-nav {
+
+    .rn-site-header-nav-button {
+
+      display: none; // Hidden by default
+    }
+  }
+}
+
+
+// MOBILE NAV BUTTONS
+// ------------------------------------------------------------------------------------------
+// burger, login, search
+@media #{$mobile-down} {
+
+  nav.rn-site-header-nav {
+
+    display: flex;
+    justify-content: flex-end;
+
+    .rn-site-header-nav-button {
+
+      text-decoration: none; // Removed underlines
+      color: $mobile-nav-icon-color;
+      text-decoration: none;
+      padding: $gutter-width / 2;
+      
+      &.rn-site-navigation-toggle {
+
+        align-items: center;
+        display: flex;
+        
+        .text {
+
+          display: none;
+          font-weight: bold;
+          text-transform: uppercase;
+          margin-left: $gutter-width / 2; // Give spacing to the right of sass-burger
+        }
+      }
+      
+      &.rn-search-user-toggle, 
+      &.rn-search-user-toggle-on, 
+      &.rn-search-criteria-toggle {
+        i {
+
+          font-size: $mobile-nav-icon-size;
+        }
+      }
+
+      &.rn-search-criteria-toggle {
+
+        //display: none; // Hide for non-search pages
+      }
+      
+      .rn-site-header-nav-burger {
+        
+        @media #{$mobile-down} {
+
+          @include burger(rem-calc(24), rem-calc(2), rem-calc(7), $mobile-nav-icon-color);
+        }
+      }
+      
+      &.is-active {
+        .rn-site-header-nav-burger {
+          @include burger-to-cross;
+        }
+      }
+    }
+  }
+}

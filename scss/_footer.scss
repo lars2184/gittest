@@ -1,0 +1,135 @@
+
+// FOOTER
+// ------------------------------------------------------------------------------------------
+
+.rn-site-footer {
+  #rn-eho {
+
+    background-image: url(/lipr/img/eho.png);
+    display: inline-block;
+    height: rem-calc(11);
+    width: rem-calc(11);
+    margin: rem-calc(0 3);
+    background-position: center bottom;
+    background-repeat: no-repeat;
+  }
+}
+
+
+// FOOTER PADDING
+// ------------------------------------------------------------------------------------------
+.rn-site-footer {
+
+  padding: rem-calc(20);
+}
+
+
+// FOOTER SEO LINKS
+// ------------------------------------------------------------------------------------------
+.rn-site-footer {
+
+  .rn-site-footer-seo-links {
+
+    margin-top: rem-calc(20);
+    
+    ul {
+
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+
+      li {
+
+        flex: 0 1 auto;
+        width: 25%;
+
+        a {
+
+          font-size: rem-calc(11);
+          color: #333333;
+
+          &:focus, 
+          &:hover {
+
+            color: $primary-color;
+          }
+        }
+      }
+    }
+
+    @media only screen and (min-width: 48em) and (max-width: 64em) {
+
+      ul {
+
+        li {
+
+          width: 33%;
+        }
+      }
+    }
+
+    @media #{$mobile-down} {
+
+      ul {
+
+        li {
+
+          flex: 1 1 auto;
+          width: 100%;
+          text-align: center;
+          margin: rem-calc(10 0);
+        }
+      }
+    }
+  }
+}
+
+
+// FOOTER DISCLAIMER
+// ------------------------------------------------------------------------------------------
+.rn-site-footer {
+
+  .rn-site-footer-disclaimer {
+
+    margin-top: rem-calc(40);
+    margin-bottom: rem-calc(20);
+    font-size: rem-calc(10);
+    color: #333333;
+    text-align: center;
+
+    a {
+
+      color: #333333;
+
+      &:focus, 
+      &:hover {
+
+        color: $primary-color;
+      }
+    }
+  }
+}
+
+
+// FOOTER RELIANCE LINKS
+// ------------------------------------------------------------------------------------------
+.rn-site-footer {
+
+  .rn-site-footer-reliance-links {
+
+    display: flex;
+    justify-content: space-between;
+
+    a {
+
+      color: #333333;
+      font-size: rem-calc(10);
+
+      &:focus, 
+      &:hover {
+
+        color: $primary-color;
+      }
+    }
+  }
+}

@@ -1,0 +1,223 @@
+
+
+// HEADER
+// ------------------------------------------------------------------------------------------
+
+
+// HEADER HEIGHT
+$desktop-header-height: rem-calc(70);
+$mobile-header-height: rem-calc(40);
+
+// HEADER PADDING
+$desktop-header-padding: rem-calc(0 20);
+$mobile-header-padding: rem-calc(0 10);
+
+// HEADER LOGO WIDTH
+$desktop-logo-width: rem-calc(120);
+$mobile-logo-width: rem-calc(150);
+
+// HEADER LOGO PADDING
+$desktop-logo-padding: rem-calc(8 0);
+$mobile-logo-padding: rem-calc(3 0);
+
+// HEADER COLORS
+$desktop-header-color: $white;
+$mobile-header-color: $white;
+
+
+// LOADER
+// ------------------------------------------------------------------------------------------
+.rn-page-loader {
+
+  position:absolute;
+  left:47%;
+  top:300px;
+  z-index:99999999;
+  background-color:#fff;
+  border-radius:.625rem;
+  text-align:center;
+  padding:1.25rem;
+
+  .rn-page-loader-text {
+
+    text-transform: uppercase;
+    font-size: .6875rem
+  }
+
+  .rn-page-loader-spinner {
+
+    margin:0 auto
+  }
+
+  .rn-page-loader-spinner img {
+
+    width:1.25rem;
+    heighth:1.25rem
+  }
+}
+
+@media #{$mobile-down} {
+
+  .rn-page-loader {
+
+    display:none
+  }
+}
+
+// HEADER
+// ------------------------------------------------------------------------------------------
+header.rn-site-header {
+
+  height: $desktop-header-height;
+  border-bottom: 1px solid #999999;
+  padding: $desktop-header-padding;
+  background-color: $desktop-header-color;
+  z-index: 200;
+
+  @media #{$mobile-down} {
+
+    padding: $mobile-header-padding;
+    height: $mobile-header-height;
+    border-bottom: none;
+    background-color: $mobile-header-color;
+    padding: 0;
+  }
+
+  >.rn-container {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: $desktop-header-height;
+    position: relative;
+
+    @media #{$mobile-down} {
+
+      align-items: flex-start;
+      justify-content: space-between;
+      height: $mobile-header-height;
+    }
+
+    .rn-site-header-logo {
+
+      flex: 0 1 auto;
+      order: 1;
+      height: 100%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      width: $desktop-logo-width; // width of desktop logo // was 120
+
+      @media #{$mobile-down} {
+      
+        padding: 0; 
+        padding: rem-calc(5 10);
+        width: $mobile-logo-width; // width of mobile logo
+      }
+
+      a {
+
+        display: block;
+        width: $desktop-logo-width;
+        padding: $desktop-logo-padding;
+        height: 100%;
+
+        img {
+
+          max-width: 100%;
+          height: auto;
+          width: 100%;
+        }
+
+        @media #{$mobile-down} {
+
+          width: $mobile-logo-width;
+          padding: $mobile-logo-padding;
+        }
+      }
+    }
+
+    .rn-site-header-nav {
+
+      flex: 1 1 auto;
+      width: 100%;
+      order: 2;
+      align-self: flex-end;
+    }
+  }
+}
+
+
+// PROPERTY WATCH
+// ------------------------------------------------------------------------------------------
+.rn-site-logged-in {
+
+  .rn-site-header-property-watch {
+
+    @media only screen and (min-width: 48em) {
+      display: inline-block !important;
+    }
+  }
+}
+
+.rn-site-header-property-watch {
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: none;
+  color: $black;
+  padding-right: rem-calc(18);
+  border: 1px solid #ccc;
+  border-top: none;
+  border-radius: rem-calc(0 0 10 10);
+  padding: rem-calc(5 10 3);
+
+  a {
+
+    color: $black;
+    text-decoration: none;
+    font-size: rem-calc(14);
+
+    &:hover,
+    &:focus {
+
+      color: $black;
+    }
+  }
+
+  #containertext {
+
+    flex: 0 1 auto;
+    width: auto;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-end;
+
+    li {
+
+      padding: 0;
+      margin: rem-calc(0 10 0 0);
+      font-size: rem-calc(11);
+
+      a {
+
+        font-size: rem-calc(11);
+
+        &:focus,
+        &:hover {
+
+          color: $black;
+        }
+      }
+
+      &:last-child {
+
+        margin-right: 0;
+      }
+    }
+  }
+}
+

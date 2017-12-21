@@ -1,0 +1,348 @@
+
+
+// GENERIC RESPONSIVE
+// ------------------------------------------------------------------------------------------
+.rn-flex-container {
+
+  display: flex;
+  justify-content: space-between;
+}
+
+
+// RESPONSIVE ROW AND COLUMNS
+// ------------------------------------------------------------------------------------------
+.rn-row {
+    margin-bottom: ($gutter-width / 2);
+    
+    display: flex;
+    //flex-wrap: wrap;
+    justify-content: space-between;
+    
+    &.center {
+      justify-content: center;
+    }
+
+    @media #{$mobile-down} {
+
+      flex-wrap: wrap;
+    }
+}
+  
+.rn-column {
+    //padding: $gutter-width;
+    
+    flex: 1 1 auto;
+    width: auto;
+
+    &.half {
+      flex: 0 1 auto;
+      width: 48.5%;
+    }
+    
+    &.one-third {
+      flex: 0 1 auto;
+      width: 32%;
+    }
+    
+    &.two-thirds {
+      flex: 0 1 auto;
+      width: 64%;
+    }
+
+    &.one-fourth {
+      flex: 0 1 auto;
+      width: 25%;
+    }
+
+    &.one-fifth {
+      flex: 0 1 auto;
+      width: 20%;
+    }
+
+    &.rn-50{
+      flex: 0 1 auto;
+      width: 50%;
+    }
+
+    &.rn-25{
+      flex: 0 1 auto;
+      width: 25%;
+    }
+
+    &.rn-75{
+      flex: 0 1 auto;
+      width: 75%;
+    }
+
+    &.rn-33{
+      flex: 0 1 auto;
+      width: 33%;
+    }
+
+    &.rn-66{
+      flex: 0 1 auto;
+      width: 66%;
+    }
+
+    &.rn-20{
+      flex: 0 1 auto;
+      width: 20%;
+    }
+
+    &.rn-80{
+      flex: 0 1 auto;
+      width: 80%;
+    }
+    
+    @media #{$mobile-down} {
+      &.half,
+      &.one-third,
+      &.two-thirds,
+      &.one-fourth,
+      &.one-fifth,
+      &.rn-50,
+      &.rn-25,
+      &.rn-75,
+      &.rn-33,
+      &.rn-66,
+      &.rn-20,
+      &.rn-80 {
+        padding: ($gutter-width / 2) 0;
+
+        flex: 1 1 100%;
+        width: 100%;
+
+        img{
+          display: block;
+          margin: 0 auto;
+        }
+      }
+    }
+}
+
+.rn-row.flip{
+
+    @media #{$tablet-up} {
+
+      .rn-column:first-child{
+
+        order: 2;
+      }
+
+      .rn-column:last-child{
+
+        order: 1;
+      }
+
+    }
+}
+
+
+// RESPONSIVE TABLES
+// ------------------------------------------------------------------------------------------
+// http://inlehmansterms.net/2014/10/11/responsive-tables-with-flexbox/
+
+.rn-responsive-table {
+  box-sizing: border-box;
+}
+.rn-responsive-table:before, .rn-responsive-table:after {
+  box-sizing: inherit;
+}
+
+/* Fixes IE Bug */
+.rn-responsive-table {
+
+  tbody{
+    display: block;
+  }
+}
+
+.rn-responsive-table {
+  
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  
+  font-size: 1rem;
+  margin: 0.5rem;
+  line-height: 1.5;
+
+  tr {
+    width: 100%;
+    display: block;
+
+    @media #{$medium-up} {
+
+      display: flex;
+      flex-flow: row nowrap;
+    }
+
+    td, th {
+
+      @media #{$small-only} {
+      
+        //  display: flex;
+        // flex-flow: row nowrap;
+                  
+      }
+
+      display: block;
+      flex-grow: 1;
+      flex-basis: 0;
+      word-wrap: normal;
+      padding: 0.5em;
+      word-break: break-word;
+      width: auto !important;
+
+      @media #{$medium-up} {
+        padding: 0.5em;
+        &:before { content: none; }
+      }
+    }
+  }
+}
+
+@media #{$small-only} {
+  
+    .rn-responsive-table {
+      tr{
+
+        th{
+          display: none;
+
+        }
+      }
+    }
+
+    .rn-responsive-table {
+
+      margin: 0;
+
+      tr{
+        display: block;
+        width: 100%;
+        td{
+
+          font-size: 0.8rem;
+
+        }
+      }
+    }  
+
+    .rn-responsive-table-mobile-headers{
+
+      tr{
+       
+        td{
+
+          display: flex;
+          flex-flow: row nowrap;
+
+          &:before {
+            content: attr(data-column-header);
+            width: 40%;
+            font-weight: 700;
+            font-size: 0.8rem;
+            margin-right: 0.5rem;
+          }
+        }
+
+        .nobefore{
+
+          &:before{
+
+            content:'';
+            width: 0px;
+            display: none;
+          }
+        }
+      }
+    }       
+}
+
+// Centers everything
+.rn-responsive-table-center{
+
+  tr{
+
+    td{
+      text-align: center;
+
+      &:before{
+        text-align: left;
+      }
+
+      span, img{
+        text-align: center;
+      }
+
+      p, div{
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
+// Center small screen - doesn't work well with headers
+@media #{$small-only} {
+
+    .rn-responsive-table-small-screen-center{
+
+      tr{
+
+        td{
+          text-align: center;
+
+          span, img{
+            text-align: center;
+          }
+
+          p, div{
+            margin: 0 auto;
+          }
+        }
+      }         
+  }
+}
+
+// Centers large screen
+@media #{$medium-up} {
+
+  .rn-responsive-table-large-screen-center{
+
+    tr{
+
+      td{
+        text-align: center;
+
+        span, img{
+          text-align: center;
+        }
+
+        p, div{
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+}
+
+.rn-responsive-table-show-borders {
+
+  tr{
+
+    border: 1px solid green;
+
+    td,th{
+
+      border: 1px solid red;
+    }
+  }
+}
+
+//generate Flexbox grow-rate utility classes
+@for $i from 1 through 10 {
+  .rn-responsive-table tr .rn-responsive-table-cell-width#{$i} {
+    flex-grow: $i;
+  }
+}
